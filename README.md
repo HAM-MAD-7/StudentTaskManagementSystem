@@ -176,6 +176,8 @@ This project demonstrates practical experience with:
 
 ---
 
+Live Demo: https://studenttaskmanager.runasp.net
+
 Author
 
 Muhammad Hammad
