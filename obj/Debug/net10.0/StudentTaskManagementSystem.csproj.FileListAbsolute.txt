@@ -186,3 +186,4 @@ C:\Users\User\source\repos\Projects\StudentTaskManagementSystem\StudentTaskManag
 C:\Users\User\source\repos\Projects\StudentTaskManagementSystem\StudentTaskManagementSystem\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\User\source\repos\Projects\StudentTaskManagementSystem\StudentTaskManagementSystem\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\User\source\repos\Projects\StudentTaskManagementSystem\StudentTaskManagementSystem\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Users\User\source\repos\Projects\StudentTaskManagementSystem\StudentTaskManagementSystem\obj\Debug\net10.0\StudentTaskManagementSystem.sourcelink.json
