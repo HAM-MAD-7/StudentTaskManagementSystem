@@ -1,0 +1,165 @@
+﻿<form asp-action="ReceiveRegisterUser" method="post" style="
+    max-width:550px;
+    margin:50px auto;
+    padding:35px;
+    background:#ffffff;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+    border-top:6px solid #4f46e5;
+    font-family:'Bookman Old Style';
+    ">
+
+    <div style="text-align:center;margin-bottom:30px;">
+
+        <h1 style="
+            color:#4f46e5;
+            font-weight:bold;
+            margin-bottom:8px;
+            ">
+            🚀 Register Account
+        </h1>
+
+        <p style="
+            color:#6b7280;
+            margin:0;
+            font-size:15px;
+            ">
+            Create your account and start managing tasks
+        </p>
+
+    </div>
+
+    <div style="margin-bottom:20px;">
+
+        <label style="
+            display:block;
+            margin-bottom:8px;
+            font-weight:bold;
+            color:#374151;
+            ">
+            👤 Full Name
+        </label>
+
+        <input name="FullName"
+               placeholder="Enter your full name"
+               style="
+        width:100%;
+        padding:14px;
+        border:2px solid #e5e7eb;
+        border-radius:12px;
+        outline:none;
+        transition:0.3s;
+        font-size:15px;
+        " />
+
+    </div>
+
+    <div style="margin-bottom:20px;">
+
+        <label style="
+            display:block;
+            margin-bottom:8px;
+            font-weight:bold;
+            color:#374151;
+            ">
+            🆔 User Name
+        </label>
+
+        <input name="UserName"
+               placeholder="Choose a username"
+               style="
+        width:100%;
+        padding:14px;
+        border:2px solid #e5e7eb;
+        border-radius:12px;
+        outline:none;
+        transition:0.3s;
+        font-size:15px;
+        " />
+
+    </div>
+
+    <div style="margin-bottom:20px;">
+
+        <label style="
+            display:block;
+            margin-bottom:8px;
+            font-weight:bold;
+            color:#374151;
+            ">
+            📧 Email Address
+        </label>
+
+        <input name="Email"
+               type="email"
+               placeholder="Enter your email"
+               style="
+        width:100%;
+        padding:14px;
+        border:2px solid #e5e7eb;
+        border-radius:12px;
+        outline:none;
+        transition:0.3s;
+        font-size:15px;
+        " />
+
+    </div>
+
+    <div style="margin-bottom:25px;">
+
+        <label style="
+            display:block;
+            margin-bottom:8px;
+            font-weight:bold;
+            color:#374151;
+            ">
+            🔒 Password
+        </label>
+
+        <input type="password"
+               name="Password"
+               placeholder="Enter your password"
+               style="
+        width:100%;
+        padding:14px;
+        border:2px solid #e5e7eb;
+        border-radius:12px;
+        outline:none;
+        transition:0.3s;
+        font-size:15px;
+        " />
+
+    </div>
+
+    <div>
+
+        <button type="submit"
+                onmouseover="
+            this.style.transform='translateY(-3px)';
+            this.style.boxShadow='0 12px 25px rgba(79,70,229,0.4)';
+            "
+                onmouseout="
+            this.style.transform='translateY(0px)';
+            this.style.boxShadow='0 6px 15px rgba(79,70,229,0.25)';
+            "
+                style="
+            width:100%;
+            padding:15px;
+            border:none;
+            border-radius:14px;
+            background:linear-gradient(135deg,#4f46e5,#7c3aed);
+            color:white;
+            font-size:18px;
+            font-weight:bold;
+            cursor:pointer;
+            transition:0.3s;
+            box-shadow:0 6px 15px rgba(79,70,229,0.25);
+            ">
+
+            ✨ Create Account
+
+        </button>
+
+    </div>
+
+</form>

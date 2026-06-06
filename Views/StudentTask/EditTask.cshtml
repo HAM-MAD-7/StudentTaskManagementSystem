@@ -1,0 +1,273 @@
+﻿@model StudentTaskModel
+<style>
+
+    @@media (max-width: 768px) {
+
+        form {
+            margin: 20px auto !important;
+            padding: 25px !important;
+        }
+
+        h1 {
+            font-size: 1.8rem !important;
+        }
+
+        p {
+            font-size: 14px !important;
+        }
+
+        input,
+        textarea,
+        select {
+            font-size: 14px !important;
+            padding: 12px !important;
+        }
+
+        button {
+            font-size: 16px !important;
+            padding: 14px !important;
+        }
+    }
+
+    @@media (max-width: 576px) {
+
+        form {
+            margin: 10px auto !important;
+            padding: 18px !important;
+            border-radius: 15px !important;
+        }
+
+        h1 {
+            font-size: 1.5rem !important;
+        }
+
+        p {
+            font-size: 13px !important;
+        }
+
+        label {
+            font-size: 14px !important;
+        }
+
+        input,
+        textarea,
+        select {
+            font-size: 13px !important;
+            padding: 10px !important;
+        }
+
+        textarea {
+            height: 120px !important;
+        }
+
+        button {
+            font-size: 15px !important;
+            padding: 12px !important;
+        }
+    }
+
+</style>
+
+<form asp-action="ReceiveEditTask" method="post" style="
+    max-width:800px;
+    margin:40px auto;
+    padding:35px;
+    border-radius:20px;
+    background:#ffffff;
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+    border-top:6px solid #f59e0b;
+    font-family:'Bookman Old Style';
+    ">
+
+    <div style="text-align:center;margin-bottom:30px;">
+        <h1 style="
+            color:#f59e0b;
+            font-weight:bold;
+            margin-bottom:5px;
+            ">
+            ✏️ Edit Task Form
+        </h1>
+
+        <p style="
+            color:#6b7280;
+            margin:0;
+            ">
+            Update task details and save changes
+        </p>
+    </div>
+
+    <div style="margin-bottom:20px;">
+        <label style="
+            display:block;
+            font-weight:bold;
+            color:#374151;
+            margin-bottom:8px;
+            ">
+            📚 Subject Name
+        </label>
+
+        <input name="SubjectName"
+               value="@Model.SubjectName"
+               placeholder="Enter subject name"
+               style="
+        width:100%;
+        padding:14px;
+        border:2px solid #e5e7eb;
+        border-radius:12px;
+        font-size:15px;
+        outline:none;
+        transition:0.3s;
+        ">
+    </div>
+
+    <div style="margin-bottom:20px;">
+        <label style="
+            display:block;
+            font-weight:bold;
+            color:#374151;
+            margin-bottom:8px;
+            ">
+            📝 Task Name
+        </label>
+
+        <input name="TaskName"
+               value="@Model.TaskName"
+               placeholder="Enter task name"
+               style="
+        width:100%;
+        padding:14px;
+        border:2px solid #e5e7eb;
+        border-radius:12px;
+        font-size:15px;
+        outline:none;
+        ">
+    </div>
+
+    <div style="margin-bottom:20px;">
+        <label style="
+            display:block;
+            font-weight:bold;
+            color:#374151;
+            margin-bottom:8px;
+            ">
+            ⚡ Task Priority
+        </label>
+
+        <select asp-for="TaskPriority"
+                style="
+            width:100%;
+            padding:14px;
+            border:2px solid #e5e7eb;
+            border-radius:12px;
+            background:white;
+            ">
+            <option>Low</option>
+            <option>Medium</option>
+            <option>High</option>
+        </select>
+    </div>
+
+    <div style="margin-bottom:20px;">
+        <label style="
+            display:block;
+            font-weight:bold;
+            color:#374151;
+            margin-bottom:8px;
+            ">
+            📄 Task Description
+        </label>
+
+        <textarea name="TaskDescription"
+                  placeholder="Describe your task..."
+                  style="
+        width:100%;
+        height:140px;
+        padding:14px;
+        border:2px solid #e5e7eb;
+        border-radius:12px;
+        resize:none;
+        ">@Model.TaskDescription</textarea>
+    </div>
+
+    <div style="
+        display:flex;
+        gap:20px;
+        margin-bottom:20px;
+        flex-wrap:wrap;
+        ">
+
+        <div style="flex:1; min-width:250px;">
+            <label style="
+                display:block;
+                font-weight:bold;
+                color:#374151;
+                margin-bottom:8px;
+                ">
+                📅 Due Date
+            </label>
+
+            <input name="DueDate"
+                   value="@Model.DueDate.ToString("yyyy-MM-dd")"
+                   type="date"
+                   style="
+            width:100%;
+            padding:14px;
+            border:2px solid #e5e7eb;
+            border-radius:12px;
+            ">
+        </div>
+
+        <div style="flex:1; min-width:250px;">
+            <label style="
+                display:block;
+                font-weight:bold;
+                color:#374151;
+                margin-bottom:8px;
+                ">
+                📌 Task Status
+            </label>
+
+            <select asp-for="TaskStatus"
+                    style="
+                width:100%;
+                padding:14px;
+                border:2px solid #e5e7eb;
+                border-radius:12px;
+                background:white;
+                ">
+                <option>Complete</option>
+                <option>Pending</option>
+                <option>Under Working</option>
+            </select>
+        </div>
+
+    </div>
+
+    <input type="hidden" name="TaskId" value="@Model.TaskId" />
+
+    <button type="submit"
+            onmouseover="
+        this.style.transform='translateY(-3px)';
+        this.style.boxShadow='0 12px 25px rgba(245,158,11,0.4)';
+        "
+            onmouseout="
+        this.style.transform='translateY(0px)';
+        this.style.boxShadow='0 6px 15px rgba(245,158,11,0.2)';
+        "
+            style="
+        width:100%;
+        padding:15px;
+        border:none;
+        border-radius:14px;
+        background:linear-gradient(135deg,#f59e0b,#ef4444);
+        color:white;
+        font-size:18px;
+        font-weight:bold;
+        cursor:pointer;
+        transition:0.3s;
+        box-shadow:0 6px 15px rgba(245,158,11,0.2);
+        ">
+        💾 Update Task
+    </button>
+
+</form>

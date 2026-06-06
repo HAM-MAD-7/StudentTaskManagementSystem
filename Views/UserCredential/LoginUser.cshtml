@@ -1,0 +1,114 @@
+﻿<form asp-action="ReceiveLoginUser" method="post" style="
+    max-width:500px;
+    margin:60px auto;
+    padding:35px;
+    background:#ffffff;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.12);
+    border-top:6px solid #10b981;
+    font-family:'Bookman Old Style';
+    ">
+
+    <div style="text-align:center;margin-bottom:30px;">
+
+        <h1 style="
+            color:#10b981;
+            font-weight:bold;
+            margin-bottom:8px;
+            ">
+            🔐 Login Account
+        </h1>
+
+        <p style="
+            color:#6b7280;
+            margin:0;
+            font-size:15px;
+            ">
+            Welcome back! Sign in to continue
+        </p>
+
+    </div>
+
+    <div style="margin-bottom:20px;">
+
+        <label style="
+            display:block;
+            margin-bottom:8px;
+            font-weight:bold;
+            color:#374151;
+            ">
+            👤 User Name
+        </label>
+
+        <input name="UserName"
+               placeholder="Enter your username"
+               style="
+        width:100%;
+        padding:14px;
+        border:2px solid #e5e7eb;
+        border-radius:12px;
+        outline:none;
+        transition:0.3s;
+        font-size:15px;
+        " />
+
+    </div>
+
+    <div style="margin-bottom:25px;">
+
+        <label style="
+            display:block;
+            margin-bottom:8px;
+            font-weight:bold;
+            color:#374151;
+            ">
+            🔒 Password
+        </label>
+
+        <input type="password"
+               name="Password"
+               placeholder="Enter your password"
+               style="
+        width:100%;
+        padding:14px;
+        border:2px solid #e5e7eb;
+        border-radius:12px;
+        outline:none;
+        transition:0.3s;
+        font-size:15px;
+        " />
+
+    </div>
+
+    <div>
+
+        <button type="submit"
+                onmouseover="
+            this.style.transform='translateY(-3px)';
+            this.style.boxShadow='0 12px 25px rgba(16,185,129,0.4)';
+            "
+                onmouseout="
+            this.style.transform='translateY(0px)';
+            this.style.boxShadow='0 6px 15px rgba(16,185,129,0.25)';
+            "
+                style="
+            width:100%;
+            padding:15px;
+            border:none;
+            border-radius:14px;
+            background:linear-gradient(135deg,#10b981,#059669);
+            color:white;
+            font-size:18px;
+            font-weight:bold;
+            cursor:pointer;
+            transition:0.3s;
+            box-shadow:0 6px 15px rgba(16,185,129,0.25);
+            ">
+
+            🚀 Login
+
+        </button>
+
+    </div>
+
+</form>
