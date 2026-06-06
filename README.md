@@ -114,7 +114,7 @@ Installation
 
 Clone Repository
 
-git clone https://github.com/yourusername/StudentTaskManagementSystem.git
+git clone https://github.com/HAM-MAD-7/StudentTaskManagementSystem.git
 
 Navigate to Project
 
