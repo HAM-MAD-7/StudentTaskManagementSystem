@@ -22,6 +22,40 @@ namespace StudentTaskManagementSystem.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+            modelBuilder.Entity("StudentTaskManagementSystem.Models.StudentFileModel", b =>
+                {
+                    b.Property<int>("FeildId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("FeildId"));
+
+                    b.Property<string>("BlobName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ContentType")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<long>("FileSize")
+                        .HasColumnType("bigint");
+
+                    b.Property<DateTime>("UploadedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("FeildId");
+
+                    b.ToTable("StudentFiles");
+                });
+
             modelBuilder.Entity("StudentTaskManagementSystem.Models.StudentTaskModel", b =>
                 {
                     b.Property<int>("TaskId")

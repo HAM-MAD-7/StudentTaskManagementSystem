@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Upload File";
+}
+<h1>Upload file to Azure Blob Storage</h1>
+<form asp-controller="Blob" asp-action="Upload" method="post" enctype="multipart/form-data">
+  <div>
+      <label>Select a file</label>
+      <input type="file" name="file"/>
+  </div>
+
+  <br />
+
+  <button type="submit">Upload to Azure</button>
+</form>
+@if(ViewBag.Message != null)
+{
+    <p>@ViewBag.Message</p>
+}
+@if(ViewBag.BlobUrl != null)
+{
+    <p>
+        Blob URL: <a href="@ViewBag.BlobUrl" target="_blank">@ViewBag.BlobUrl</a>
+    </p>
+}

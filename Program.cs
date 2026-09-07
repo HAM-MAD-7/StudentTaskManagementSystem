@@ -1,9 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using StudentTaskManagementSystem.Data;
+using StudentTaskManagementSystem.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<BlobStorageService>();
 
 var connect = builder.Configuration.GetConnectionString("DefaultConnection");
 
