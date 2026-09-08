@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Azure Files Upload";
+}
+
+<h1>Azure Files Upload</h1>
+
+<form asp-controller="AzureFiles"
+      asp-action="Upload"
+      method="post"
+      enctype="multipart/form-data">
+
+    <input type="file" name="file" />
+
+    <button type="submit">Upload</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <p>
+        <strong>@ViewBag.Message</strong>
+    </p>
+}

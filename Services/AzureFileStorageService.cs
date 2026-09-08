@@ -1,0 +1,30 @@
+﻿using Azure.Storage.Files.Shares;
+using Azure.Identity;
+using Azure.Storage.Files.Shares.Models;
+
+namespace StudentTaskManagementSystem.Services
+{
+    public class AzureFileStorageService
+    {
+        private readonly ShareDirectoryClient _client;
+        public AzureFileStorageService(IConfiguration config)
+        {
+            string accountName = config["AzureStorage:AccountName"]!;
+            string shareName = config["AzureFileStorage:ShareName"]!;
+            string directoryName = config["AzureFileStorage:DirectoryName"]!;
+            string fileServiceUri = $"https://{accountName}.file.core.windows.net";
+            ShareServiceClient serviceClient = new ShareServiceClient(new Uri(fileServiceUri), new DefaultAzureCredential());
+            ShareClient client = serviceClient.GetShareClient(shareName);
+            _client = client.GetDirectoryClient(directoryName);
+        }
+        public async Task<string> UploadAsync(IFormFile file)
+        {
+            string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
+            ShareFileClient fileClient = _client.GetFileClient(fileName);
+            using Stream stream = file.OpenReadStream();
+            await fileClient.CreateAsync(stream.Length);
+            await fileClient.UploadRangeAsync(new Azure.HttpRange(0, stream.Length), stream);
+            return fileName;
+        }
+    }
+}

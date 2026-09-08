@@ -10,6 +10,8 @@ builder.Services.AddScoped<BlobStorageService>();
 
 builder.Services.AddScoped<QueueStorageService>();
 
+builder.Services.AddScoped<AzureFileStorageService>();
+
 var connect = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
