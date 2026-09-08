@@ -8,8 +8,8 @@ namespace StudentTaskManagementSystem.Services
         private readonly BlobContainerClient _containerClient;
         public BlobStorageService(IConfiguration config)
         {
-            string accountName = config["AzureStorage:AccountName"];
-            string containerName = config["AzureStorage:ContainerName"];
+            string accountName = config["AzureStorage:AccountName"]!;
+            string containerName = config["AzureStorage:ContainerName"]!;
             string blobServiceUri = $"https://{accountName}.blob.core.windows.net";
             BlobServiceClient serviceClient = new BlobServiceClient(new Uri(blobServiceUri), new DefaultAzureCredential());
             _containerClient = serviceClient.GetBlobContainerClient(containerName);

@@ -8,6 +8,8 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<BlobStorageService>();
 
+builder.Services.AddScoped<QueueStorageService>();
+
 var connect = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

@@ -8,11 +8,13 @@ namespace StudentTaskManagementSystem.Controllers
     public class BlobController : Controller
     {
         private readonly BlobStorageService _blobStorageService;
+        private readonly QueueStorageService _queueStorageService;
         private readonly ApplicationDbContext _context;
-        public BlobController(BlobStorageService blobStorageService, ApplicationDbContext context)
+        public BlobController(BlobStorageService blobStorageService, ApplicationDbContext context, QueueStorageService queueStorageService)
         {
             _blobStorageService = blobStorageService;
             _context = context;
+            _queueStorageService = queueStorageService;
         }
         [HttpGet]
         public IActionResult Upload()
@@ -39,9 +41,11 @@ namespace StudentTaskManagementSystem.Controllers
             };
             _context.StudentFiles.Add(studentfile);
             await _context.SaveChangesAsync();
+            string queueMessage = $"File uploaded: {studentfile.FileName} | Blob: {studentfile.BlobName} | UserId: {studentfile.UserId}";
+            await _queueStorageService.SendMessageAsync(queueMessage);
             ViewBag.Message = "File uploaded successfully!";
             ViewBag.BlobUrl = blobUrl.BlobUrl;
-            return View();
+            return View(); 
         }
         [HttpGet]
         public async Task<IActionResult> Download(string fileName)

@@ -10,6 +10,7 @@
         "dependencies": {
           "Azure.Identity": "1.21.0",
           "Azure.Storage.Blobs": "12.29.2",
+          "Azure.Storage.Queues": "12.27.1",
           "Microsoft.EntityFrameworkCore": "9.0.0",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.0",
           "Pomelo.EntityFrameworkCore.MySql": "9.0.0"
@@ -65,6 +66,18 @@
           "lib/net10.0/Azure.Storage.Common.dll": {
             "assemblyVersion": "12.28.0.0",
             "fileVersion": "12.2800.26.30406"
+          }
+        }
+      },
+      "Azure.Storage.Queues/12.27.1": {
+        "dependencies": {
+          "Azure.Core": "1.55.0",
+          "Azure.Storage.Common": "12.28.0"
+        },
+        "runtime": {
+          "lib/net10.0/Azure.Storage.Queues.dll": {
+            "assemblyVersion": "12.27.1.0",
+            "fileVersion": "12.2700.126.32304"
           }
         }
       },
@@ -629,6 +642,13 @@
       "sha512": "sha512-5l8YhNrks38zKLGFW2BBFLwieyamH/xauABSASsdpZv79G0f+n2n22IjkRmUqCmALSupkwRHh2LOhbW3yj5Qgw==",
       "path": "azure.storage.common/12.28.0",
       "hashPath": "azure.storage.common.12.28.0.nupkg.sha512"
+    },
+    "Azure.Storage.Queues/12.27.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uQgZ9bzwVJ8bqsWywzwkRt1lfusYPXJAPSb9yVlTsSmZtH+bnDb/RfQuHiuUmk3nlQbCOUGFdD0cRXn8uMiOHg==",
+      "path": "azure.storage.queues/12.27.1",
+      "hashPath": "azure.storage.queues.12.27.1.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",
