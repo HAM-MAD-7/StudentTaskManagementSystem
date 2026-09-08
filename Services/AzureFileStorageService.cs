@@ -7,8 +7,10 @@ namespace StudentTaskManagementSystem.Services
     public class AzureFileStorageService
     {
         private readonly ShareDirectoryClient _client;
-        public AzureFileStorageService(IConfiguration config)
+        private readonly ILogger<AzureFileStorageService> _logger;
+        public AzureFileStorageService(IConfiguration config, ILogger<AzureFileStorageService> logger)
         {
+            _logger = logger;
             string accountName = config["AzureStorage:AccountName"]!;
             string shareName = config["AzureFileStorage:ShareName"]!;
             string directoryName = config["AzureFileStorage:DirectoryName"]!;
@@ -25,12 +27,27 @@ namespace StudentTaskManagementSystem.Services
         }
         public async Task<string> UploadAsync(IFormFile file)
         {
-            string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-            ShareFileClient fileClient = _client.GetFileClient(fileName);
-            using Stream stream = file.OpenReadStream();
-            await fileClient.CreateAsync(stream.Length);
-            await fileClient.UploadRangeAsync(new Azure.HttpRange(0, stream.Length), stream);
-            return fileName;
+            try
+            {
+                string fileName =
+                    Guid.NewGuid().ToString() +
+                    Path.GetExtension(file.FileName);
+                ShareFileClient fileClient =
+                    _client.GetFileClient(fileName);
+                using Stream stream = file.OpenReadStream();
+                await fileClient.CreateAsync(stream.Length);
+                await fileClient.UploadRangeAsync(
+                    new Azure.HttpRange(0, stream.Length),
+                    stream);
+                return fileName;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(
+                    ex,
+                    "Azure Files upload failed.");
+                throw;
+            }
         }
     }
 }
