@@ -3,6 +3,7 @@ using Azure.Identity;
 
 using System.Linq.Expressions;
 using Microsoft.VisualBasic;
+using Azure.Storage.Queues.Models;
 
 namespace StudentTaskManagementSystem.Services
 {
@@ -20,6 +21,20 @@ namespace StudentTaskManagementSystem.Services
         {
             await _queueClient.CreateIfNotExistsAsync();
             await _queueClient.SendMessageAsync(message);
+        }
+        public async Task<QueueMessage?> ReceiveMessageAsync()
+        {
+            await _queueClient.CreateIfNotExistsAsync();
+            Azure.Response<QueueMessage[]> response = await _queueClient.ReceiveMessagesAsync(maxMessages:1);
+            if(response.Value.Length == 0)
+            {
+                return null;
+            }
+            return response.Value[0];
+        }
+        public async Task DeleteMessageAsync(string messageId, string popReceipt)
+        {
+            await _queueClient.DeleteMessageAsync(messageId, popReceipt);
         }
     }
 }

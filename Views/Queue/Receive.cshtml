@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Queue Messages";
+}
+
+<h1>Azure Queue Message</h1>
+
+@if (ViewBag.Message != null)
+{
+    <p>
+        <strong>Message:</strong>
+        @ViewBag.Message
+    </p>
+}
+
+@if (ViewBag.Status != null)
+{
+    <p>
+        <strong>Status:</strong>
+        @ViewBag.Status
+    </p>
+}
