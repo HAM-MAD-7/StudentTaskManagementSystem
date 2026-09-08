@@ -13,7 +13,13 @@ namespace StudentTaskManagementSystem.Services
             string shareName = config["AzureFileStorage:ShareName"]!;
             string directoryName = config["AzureFileStorage:DirectoryName"]!;
             string fileServiceUri = $"https://{accountName}.file.core.windows.net";
-            ShareServiceClient serviceClient = new ShareServiceClient(new Uri(fileServiceUri), new DefaultAzureCredential());
+            ShareClientOptions options = new ShareClientOptions
+            {
+                AllowTrailingDot = true,
+                AllowSourceTrailingDot = true,
+                ShareTokenIntent = ShareTokenIntent.Backup
+            };
+            ShareServiceClient serviceClient = new ShareServiceClient(new Uri(fileServiceUri), new DefaultAzureCredential(), options);
             ShareClient client = serviceClient.GetShareClient(shareName);
             _client = client.GetDirectoryClient(directoryName);
         }
