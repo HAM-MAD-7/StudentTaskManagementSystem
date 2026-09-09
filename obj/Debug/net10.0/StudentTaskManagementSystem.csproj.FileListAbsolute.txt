@@ -201,3 +201,4 @@ C:\Users\User\source\repos\Projects\StudentTaskManagementSystem\StudentTaskManag
 C:\Users\User\source\repos\Projects\StudentTaskManagementSystem\StudentTaskManagementSystem\bin\Debug\net10.0\Azure.Identity.dll
 C:\Users\User\source\repos\Projects\StudentTaskManagementSystem\StudentTaskManagementSystem\bin\Debug\net10.0\Azure.Storage.Queues.dll
 C:\Users\User\source\repos\Projects\StudentTaskManagementSystem\StudentTaskManagementSystem\bin\Debug\net10.0\Azure.Storage.Files.Shares.dll
+C:\Users\User\source\repos\Projects\StudentTaskManagementSystem\StudentTaskManagementSystem\bin\Debug\net10.0\Azure.Data.Tables.dll

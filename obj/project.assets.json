@@ -2,14 +2,14 @@
   "version": 4,
   "targets": {
     "net10.0": {
-      "Azure.Core/1.55.0": {
+      "Azure.Core/1.62.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Bcl.AsyncInterfaces": "10.0.3",
-          "Microsoft.Identity.Client": "4.83.1",
-          "Microsoft.Identity.Client.Extensions.Msal": "4.83.1",
-          "System.ClientModel": "1.11.0",
-          "System.Memory.Data": "10.0.3"
+          "Microsoft.Bcl.AsyncInterfaces": "10.0.10",
+          "Microsoft.Identity.Client": "4.84.2",
+          "Microsoft.Identity.Client.Extensions.Msal": "4.84.2",
+          "System.ClientModel": "1.15.0",
+          "System.Memory.Data": "10.0.10"
         },
         "compile": {
           "lib/net10.0/Azure.Core.dll": {
@@ -23,6 +23,22 @@
         },
         "build": {
           "buildTransitive/net10.0/Azure.Core.targets": {}
+        }
+      },
+      "Azure.Data.Tables/12.12.0": {
+        "type": "package",
+        "dependencies": {
+          "Azure.Core": "1.62.0"
+        },
+        "compile": {
+          "lib/net10.0/Azure.Data.Tables.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Azure.Data.Tables.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Azure.Identity/1.21.0": {
@@ -122,7 +138,7 @@
           }
         }
       },
-      "Microsoft.Bcl.AsyncInterfaces/10.0.3": {
+      "Microsoft.Bcl.AsyncInterfaces/10.0.10": {
         "type": "package",
         "compile": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
@@ -564,7 +580,7 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "Microsoft.Identity.Client/4.83.1": {
+      "Microsoft.Identity.Client/4.84.2": {
         "type": "package",
         "dependencies": {
           "Microsoft.IdentityModel.Abstractions": "8.14.0"
@@ -580,10 +596,10 @@
           }
         }
       },
-      "Microsoft.Identity.Client.Extensions.Msal/4.83.1": {
+      "Microsoft.Identity.Client.Extensions.Msal/4.84.2": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Identity.Client": "4.83.1",
+          "Microsoft.Identity.Client": "4.84.2",
           "System.Security.Cryptography.ProtectedData": "4.5.0"
         },
         "compile": {
@@ -655,10 +671,10 @@
           }
         }
       },
-      "System.ClientModel/1.11.0": {
+      "System.ClientModel/1.15.0": {
         "type": "package",
         "dependencies": {
-          "System.Memory.Data": "10.0.3"
+          "System.Memory.Data": "10.0.9"
         },
         "compile": {
           "lib/net10.0/System.ClientModel.dll": {
@@ -816,7 +832,7 @@
           "buildTransitive/net8.0/_._": {}
         }
       },
-      "System.Memory.Data/10.0.3": {
+      "System.Memory.Data/10.0.10": {
         "type": "package",
         "compile": {
           "lib/net10.0/System.Memory.Data.dll": {
@@ -852,17 +868,17 @@
     }
   },
   "libraries": {
-    "Azure.Core/1.55.0": {
-      "sha512": "c7femvYS/xEUrLP1sNZN+DoQZmx3X+G3ZXtOOz0RL/7cGMCM3JVqepVmRd3AwM4IK8AtTGS4GOigCO+d/zaSsQ==",
+    "Azure.Core/1.62.0": {
+      "sha512": "C0ijs91ZW2uhF/VwGLXeayb+RwTWhDxKnrsmqPWg5HkYtPQ93mzaydyMCjAzE0AG5yHc1bpaPc+NPlZUgz3w8g==",
       "type": "package",
-      "path": "azure.core/1.55.0",
+      "path": "azure.core/1.62.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "CHANGELOG.md",
         "ConfigurationSchema.json",
         "README.md",
-        "azure.core.1.55.0.nupkg.sha512",
+        "azure.core.1.62.0.nupkg.sha512",
         "azure.core.nuspec",
         "azureicon.png",
         "buildTransitive/net10.0/Azure.Core.targets",
@@ -880,6 +896,26 @@
         "lib/net8.0/Azure.Core.xml",
         "lib/netstandard2.0/Azure.Core.dll",
         "lib/netstandard2.0/Azure.Core.xml"
+      ]
+    },
+    "Azure.Data.Tables/12.12.0": {
+      "sha512": "q/bDOim1Qru3NrPJO0v8DnZxUFVf1KXh+BBksEgDFPqMvw9jstJEJ+efq4WfC4BLLER67fgzGfFjJevv+R94oA==",
+      "type": "package",
+      "path": "azure.data.tables/12.12.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGELOG.md",
+        "README.md",
+        "azure.data.tables.12.12.0.nupkg.sha512",
+        "azure.data.tables.nuspec",
+        "azureicon.png",
+        "lib/net10.0/Azure.Data.Tables.dll",
+        "lib/net10.0/Azure.Data.Tables.xml",
+        "lib/net8.0/Azure.Data.Tables.dll",
+        "lib/net8.0/Azure.Data.Tables.xml",
+        "lib/netstandard2.0/Azure.Data.Tables.dll",
+        "lib/netstandard2.0/Azure.Data.Tables.xml"
       ]
     },
     "Azure.Identity/1.21.0": {
@@ -1004,10 +1040,10 @@
         "logo.png"
       ]
     },
-    "Microsoft.Bcl.AsyncInterfaces/10.0.3": {
-      "sha512": "TV62UsrJZPX6gbt3c4WrtXh7bmaDIcMqf9uft1cc4L6gJXOU07hDGEh+bFQh/L2Az0R1WVOkiT66lFqS6G2NmA==",
+    "Microsoft.Bcl.AsyncInterfaces/10.0.10": {
+      "sha512": "TFI6OKYE1XZz4SGuTSH70c6SBdPpFktXsoa1gCxTr3mKrhmXirnvaS0tKz+J3ZWICEAmMpEGn59nO4ICtUpQXA==",
       "type": "package",
-      "path": "microsoft.bcl.asyncinterfaces/10.0.3",
+      "path": "microsoft.bcl.asyncinterfaces/10.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1022,7 +1058,7 @@
         "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.xml",
         "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
         "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
-        "microsoft.bcl.asyncinterfaces.10.0.3.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.10.0.10.nupkg.sha512",
         "microsoft.bcl.asyncinterfaces.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -2115,10 +2151,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Identity.Client/4.83.1": {
-      "sha512": "jOLIrZ3cynoqHLLO1cXplFFabrhrMEYs/EuKHvmCyrOm1axqiVFT6nCSnHxk7w5+d2BeQfCdM12Yf/0X7OeS1g==",
+    "Microsoft.Identity.Client/4.84.2": {
+      "sha512": "Va9FjmABSgj/lcUfHH0pBNQkmS7SNyepz2ERV7Yynp6QgEYpFdSqR6Vzy1WWipN8GS5pBHuXoZbqaDWuARCrHQ==",
       "type": "package",
-      "path": "microsoft.identity.client/4.83.1",
+      "path": "microsoft.identity.client/4.84.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2136,14 +2172,14 @@
         "lib/net8.0/Microsoft.Identity.Client.xml",
         "lib/netstandard2.0/Microsoft.Identity.Client.dll",
         "lib/netstandard2.0/Microsoft.Identity.Client.xml",
-        "microsoft.identity.client.4.83.1.nupkg.sha512",
+        "microsoft.identity.client.4.84.2.nupkg.sha512",
         "microsoft.identity.client.nuspec"
       ]
     },
-    "Microsoft.Identity.Client.Extensions.Msal/4.83.1": {
-      "sha512": "I3k4J4Hj4KbLEFanjeUzzDOVecukETaTgEkJ7h2pP/Yazs6SLp6TVUTo/Eo+ptPXMwvc+iX7rBFtMSUrA7R+Mg==",
+    "Microsoft.Identity.Client.Extensions.Msal/4.84.2": {
+      "sha512": "+D98LaU3dOu/Nzs6kgbBJapMvH7iwYcAeC99XwSkpmEadsPv6rozecOl9P6m4A3RfpOuPt9e6J6TwwUUp3+M4w==",
       "type": "package",
-      "path": "microsoft.identity.client.extensions.msal/4.83.1",
+      "path": "microsoft.identity.client.extensions.msal/4.84.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2152,7 +2188,7 @@
         "lib/net8.0/Microsoft.Identity.Client.Extensions.Msal.xml",
         "lib/netstandard2.0/Microsoft.Identity.Client.Extensions.Msal.dll",
         "lib/netstandard2.0/Microsoft.Identity.Client.Extensions.Msal.xml",
-        "microsoft.identity.client.extensions.msal.4.83.1.nupkg.sha512",
+        "microsoft.identity.client.extensions.msal.4.84.2.nupkg.sha512",
         "microsoft.identity.client.extensions.msal.nuspec"
       ]
     },
@@ -2241,10 +2277,10 @@
         "pomelo.entityframeworkcore.mysql.nuspec"
       ]
     },
-    "System.ClientModel/1.11.0": {
-      "sha512": "1Wl32zh7TbvN+HAO8NqDuaN0Ao2Qu/0j0NJSrXGDtpUQsTXQYJ3C6hd9/Ds2IrgP4agMQYFoXB35GZfC21ByHw==",
+    "System.ClientModel/1.15.0": {
+      "sha512": "y6zQLInrpX+oGL1gXM04DrUSu1O1esWxt4rD/zrujTnzIFChn/noD1OiVVpTrU8ZvglwqO2Uw038svUR3SiAOg==",
       "type": "package",
-      "path": "system.clientmodel/1.11.0",
+      "path": "system.clientmodel/1.15.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2265,7 +2301,7 @@
         "lib/net9.0/System.ClientModel.xml",
         "lib/netstandard2.0/System.ClientModel.dll",
         "lib/netstandard2.0/System.ClientModel.xml",
-        "system.clientmodel.1.11.0.nupkg.sha512",
+        "system.clientmodel.1.15.0.nupkg.sha512",
         "system.clientmodel.nuspec"
       ]
     },
@@ -2478,10 +2514,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "System.Memory.Data/10.0.3": {
-      "sha512": "MaGhRfGunmrj/nHjtsi9XkhlYJ/ERGWrbA+BiSKNtGnAjc9XlG5EhAvak6VRcX5LYzPF6pBO8nJ613dTgzabig==",
+    "System.Memory.Data/10.0.10": {
+      "sha512": "roR+5AeOpflUxJQlqSfsZs/Bvi1uw4KBuTkIgF1e8l0RdalG4AUn84+sjJLclEfOV85gAjc8+Pp540qjDE5UIg==",
       "type": "package",
-      "path": "system.memory.data/10.0.3",
+      "path": "system.memory.data/10.0.10",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -2502,7 +2538,7 @@
         "lib/net9.0/System.Memory.Data.xml",
         "lib/netstandard2.0/System.Memory.Data.dll",
         "lib/netstandard2.0/System.Memory.Data.xml",
-        "system.memory.data.10.0.3.nupkg.sha512",
+        "system.memory.data.10.0.10.nupkg.sha512",
         "system.memory.data.nuspec",
         "useSharedDesignerContext.txt"
       ]
@@ -2551,6 +2587,7 @@
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "Azure.Data.Tables >= 12.12.0",
       "Azure.Identity >= 1.21.0",
       "Azure.Storage.Blobs >= 12.29.2",
       "Azure.Storage.Files.Shares >= 12.27.1",
@@ -2613,6 +2650,10 @@
         "framework": "net10.0",
         "targetAlias": "net10.0",
         "dependencies": {
+          "Azure.Data.Tables": {
+            "target": "Package",
+            "version": "[12.12.0, )"
+          },
           "Azure.Identity": {
             "target": "Package",
             "version": "[1.21.0, )"

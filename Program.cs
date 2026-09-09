@@ -12,6 +12,8 @@ builder.Services.AddScoped<QueueStorageService>();
 
 builder.Services.AddScoped<AzureFileStorageService>();
 
+builder.Services.AddScoped<AzureTableStorageService>();
+
 var connect = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

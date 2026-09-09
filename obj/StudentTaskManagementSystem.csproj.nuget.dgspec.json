@@ -53,6 +53,10 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
+            "Azure.Data.Tables": {
+              "target": "Package",
+              "version": "[12.12.0, )"
+            },
             "Azure.Identity": {
               "target": "Package",
               "version": "[1.21.0, )"
